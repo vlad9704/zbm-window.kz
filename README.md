@@ -1,0 +1,2 @@
+# zbm-window.kz
+WordPress
