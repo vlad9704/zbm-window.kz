@@ -42,8 +42,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	    		}
 	    	}
 		],   
-		prevArrow: '<button style="transform: rotate(180deg)" type="button" class="slick-prev"><img src="/images/dest/arrow-left.svg"></button>',
-  		nextArrow: '<button type="button" class="slick-next"><img src="/images/dest/arrow-left.svg"></button>'
+		prevArrow: '<button style="transform: rotate(180deg)" type="button" class="slick-prev"><img src="https://zbm-windows.kz/wp-content/themes/window/images/dest/arrow-left.svg"></button>',
+  		nextArrow: '<button type="button" class="slick-next"><img src="https://zbm-windows.kz/wp-content/themes/window/images/dest/arrow-left.svg"></button>'
 	});
 
 	//SCROLL

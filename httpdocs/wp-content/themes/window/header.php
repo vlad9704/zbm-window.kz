@@ -1,59 +1,117 @@
-<?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package window
- */
+<!DOCTYPE html>
+<html lang="en">
 
-?>
-<!doctype html>
-<html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-	<?php wp_head(); ?>
+	<meta charset="utf-8">
+	<title>Bant-Diyar</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="<?bloginfo('template_directory')?>/images/dest/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="<?bloginfo('template_directory')?>/css/app.css">
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" />
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
-<body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'window' ); ?></a>
+<body>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$window_description = get_bloginfo( 'description', 'display' );
-			if ( $window_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $window_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'window' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+<header>
+	<div class="container">
+		<div class="top_bar">
+			<div class="row align-items-center justify-content-between">
+				<div class="col-xl-3 col-lg-3 col-sm-6 col-5">
+					<div class="logo"><a href=""><img src="<?bloginfo('template_directory')?>/images/dest/logo.png" alt=""></a></div>
+				</div>
+				<div class="col-lg-3 col-sm-6 col-7">
+					<div class="header_location"><span>Ул. Н. Островского, д. 115 к. 1</span></div>
+				</div>
+				<div class="col-xl-2 col-lg-3 col-sm-6 col-7 d-flex flex-column">
+					<a class="phone_one" href="tel:+77077777077">+7(707) 777 70 77</a>
+					<a class="phone_two" href="tel:+77077777077">+7(707) 777 70 77</a>
+				</div>
+				<div class="col-lg-2 col-sm-6 col-5">
+					<div class="header_social d-flex">
+						<a href="facebook.com"><img src="<?bloginfo('template_directory')?>/images/dest/facebook.svg" alt="facebook" title="facebook"></a>
+						<a href="instagram.com"><img src="<?bloginfo('template_directory')?>/images/dest/instagram.svg" alt="instagram" title="instagram"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 justify-content-center">
+				<div class="main_menu">
+					<?
+					wp_nav_menu( array(
+						'theme_location'  => '',
+						'menu'            => '',
+						'container'       => 'ul',
+						'container_class' => 'nav justify-content-around',
+						'container_id'    => '',
+						'menu_class'      => 'nav justify-content-around',
+						'menu_id'         => '',
+						'echo'            => true,
+						'fallback_cb'     => 'wp_page_menu',
+						'before'          => '',
+						'after'           => '',
+						'link_before'     => '',
+						'link_after'      => '',
+						'items_wrap'      => '<ul id = "%1$s" class = "%2$s">%3$s</ul>',
+						'depth'           => 0,
+						'walker'          => '',
+					) );
+					?>
+					<?/*<ul class="nav justify-content-around">
+							<li class="nav-item">
+								<div class="dropdown open">
+									<a href="javascript:void(0)" class="btn dropdown-toggle" type="button" id="dropdownMenuButton_main" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										Главная
+									</a>
+									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton_main">
+										<a class="dropdown-item" href="#">О компании</a>
+										<a class="dropdown-item" href="#">Миссия и ценности</a>
+										<a class="dropdown-item" href="#">Реализованные проекты</a>
+										<a class="dropdown-item" href="#">Карьера</a>
+										<a class="dropdown-item" href="#">Контакты</a>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item"><a href="#" class="nav-link">Партнеры</a></li>
+							<li class="nav-item">
+								<div class="dropdown open">
+									<a href="javascript:void(0)" class="btn dropdown-toggle" type="button" id="dropdownMenuButton_osteklenie" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										Остекление
+									</a>
+									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton_osteklenie">
+										<a class="dropdown-item" href="#">Толщина стекла</a>
+										<a class="dropdown-item" href="#">Разновидности стекла</a>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item">
+								<div class="dropdown open">
+									<a href="javascript:void(0)" class="btn dropdown-toggle" type="button" id="dropdownMenuButton_pvh" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										ПВХ
+									</a>
+									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton_pvh">
+										<a class="dropdown-item" href="#">Виды профиля</a>
+										<a class="dropdown-item" href="#">Ламинированный профиль</a>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item">
+								<div class="dropdown open">
+									<a href="javascript:void(0)" class="btn dropdown-toggle" type="button" id="dropdownMenuButton_window" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										Алюминевые окна
+									</a>
+									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton_window">
+										<a class="dropdown-item" href="#">Виды</a>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item"><a href="" class="nav-link">Новости</a></li>
+						</ul>*/?>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
