@@ -23,7 +23,7 @@
 					<div class="logo"><a href=""><img src="<?bloginfo('template_directory')?>/images/dest/logo.png" alt=""></a></div>
 				</div>
 				<div class="col-lg-3 col-sm-6 col-7">
-					<div class="header_location"><span>Ул. Н. Островского, д. 115 к. 1</span></div>
+					<div class="header_location"><span><? the_field('header_address') ?></span></div>
 				</div>
 				<div class="col-xl-2 col-lg-3 col-sm-6 col-7 d-flex flex-column">
 					<a class="phone_one" href="tel:+77077777077">+7(707) 777 70 77</a>
@@ -41,7 +41,7 @@
 			<div class="col-md-12 justify-content-center">
 				<div class="main_menu">
 					<?
-					wp_nav_menu( array(
+					/*wp_nav_menu( array(
 						'theme_location'  => '',
 						'menu'            => '',
 						'container'       => 'ul',
@@ -58,6 +58,16 @@
 						'items_wrap'      => '<ul id = "%1$s" class = "%2$s">%3$s</ul>',
 						'depth'           => 0,
 						'walker'          => '',
+					) );*/
+					wp_nav_menu( array(
+						'theme_location'  => 'primary',
+						'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
+						'container'       => '',
+						'container_class' => '',
+						'container_id'    => '',
+						'menu_class'      => 'nav justify-content-around',
+						'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+						'walker'          => new WP_Bootstrap_Navwalker(),
 					) );
 					?>
 					<?/*<ul class="nav justify-content-around">
