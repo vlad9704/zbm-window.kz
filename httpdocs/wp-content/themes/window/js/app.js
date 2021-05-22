@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		$('body,html').animate({scrollTop: 0}, 1200);
 	});
 
-	$("ul li a").on("click", function (event) {
+	/*$("ul li a").on("click", function (event) {
 		// var top = null;
 	    event.preventDefault();
 	    var id = $(this).attr('href'),
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		// $('.mobile-menu ul').hide(500);
 		// $('.burger').children().attr('src', 'img/burger.png');
 		// $('.mobile').slideUp(500);
-	});
+	});*/
 
 	$('body').on('click', '.j_type_window', function () {
 

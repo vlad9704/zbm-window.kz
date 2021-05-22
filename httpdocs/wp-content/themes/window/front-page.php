@@ -6,7 +6,7 @@
 				<div class="info_block">
 					<div class="title">
 						<h1><? the_field('title_main_page') ?></h1>
-						<h2>Балконов, лоджий, квартир, домов и коттеджей</h2>
+						<h2><? the_field('description_first_block') ?></h2>
 					</div>
 					<div class="more_info_cont">
 						<a class="more_info" href="#modal" data-fancybox="">Узнать стоимость</a>

@@ -388,7 +388,7 @@ img {
 	border-radius: 10px
 }
 
-.mobile-menu ul {
+.mobile-menu > ul {
 	height: 100%;
 	padding: 0;
 	margin: 0;
@@ -402,13 +402,12 @@ img {
 	flex-direction: column
 }
 
-.mobile-menu li {
+.mobile-menu > ul > li {
 	padding-top: 35px;
 	margin: 0 auto;
 	display: inline-block;
 	text-transform: uppercase;
 	font-size: 16px;
-	font-weight: 900;
 	text-decoration: none;
 	list-style-type: none;
 	position: relative
@@ -416,6 +415,19 @@ img {
 
 .mobile-menu a {
 	text-decoration: none !important
+}
+
+.inside_page {
+	padding: 20px 0;
+}
+
+.inside_page a {
+	color: #333 !important;
+}
+
+.inside_page ul {
+	padding-left: 20px;
+	list-style-type: unset;
 }
 
 html {
@@ -920,25 +932,24 @@ footer .f_bottom_menu_block a:hover {
 	color: #fff !important
 }
 
+footer .f_bottom_menu_cont {
+	font-size: 15px;
+	text-transform: uppercase;
+	display: flex;
+}
+
+footer .requsitess {
+	width: 250px;
+	margin-top: 10px;
+}
+
 footer .f_bottom_menu_cont a {
 	display: block
 }
 
 footer .f_bottom_menu_cont ul {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-	-webkit-box-pack: justify;
-	-ms-flex-pack: justify;
-	justify-content: space-between
-}
-
-footer .f_bottom_menu_cont ul li {
-	font-size: 15px;
-	text-transform: uppercase;
-	margin-top: 10px
+	column-count: 3;
+	margin-bottom: 0;
 }
 
 footer .f_bottom_contact_block {
@@ -993,6 +1004,10 @@ footer .f_bottom_contact_block .f_bottom_social a:not(:last-child) {
 		margin-top: 20px
 	}
 
+	footer .f_bottom_menu_cont ul {
+		column-count: 2;
+	}
+
 	section#calculation .calculation_block {
 		margin: 0 auto;
 		padding-left: 20px;
@@ -1006,6 +1021,12 @@ footer .f_bottom_contact_block .f_bottom_social a:not(:last-child) {
 }
 
 @media screen and (max-width: 991px) {
+	footer .f_bottom_menu_cont {
+		flex-direction: column;
+	}
+	footer .f_bottom_menu_cont a {
+		padding-left: 0;
+	}
 	section#osteklenie .info_block {
 		margin-right: auto;
 		text-align: center
@@ -1167,6 +1188,9 @@ footer .f_bottom_contact_block .f_bottom_social a:not(:last-child) {
 }
 
 @media screen and (max-width: 575px) {
+	footer .f_bottom_menu_cont ul {
+		column-count: 1;
+	}
 	footer .f_bottom_contact_block ul li {
 		width: 100%
 	}

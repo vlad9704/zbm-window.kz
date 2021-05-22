@@ -20,10 +20,10 @@
 		<div class="top_bar">
 			<div class="row align-items-center justify-content-between">
 				<div class="col-xl-3 col-lg-3 col-sm-6 col-5">
-					<div class="logo"><a href=""><img src="<?bloginfo('template_directory')?>/images/dest/logo.png" alt=""></a></div>
+					<div class="logo"><a href="/"><img src="<?bloginfo('template_directory')?>/images/dest/logo.png" alt=""></a></div>
 				</div>
 				<div class="col-lg-3 col-sm-6 col-7">
-					<div class="header_location"><span><? the_field('header_address') ?></span></div>
+					<div class="header_location"><span>Ул. Н. Островского, д. 115 к. 1</span></div>
 				</div>
 				<div class="col-xl-2 col-lg-3 col-sm-6 col-7 d-flex flex-column">
 					<a class="phone_one" href="tel:+77077777077">+7(707) 777 70 77</a>
@@ -41,31 +41,14 @@
 			<div class="col-md-12 justify-content-center">
 				<div class="main_menu">
 					<?
-					/*wp_nav_menu( array(
-						'theme_location'  => '',
-						'menu'            => '',
-						'container'       => 'ul',
-						'container_class' => 'nav justify-content-around',
-						'container_id'    => '',
-						'menu_class'      => 'nav justify-content-around',
-						'menu_id'         => '',
-						'echo'            => true,
-						'fallback_cb'     => 'wp_page_menu',
-						'before'          => '',
-						'after'           => '',
-						'link_before'     => '',
-						'link_after'      => '',
-						'items_wrap'      => '<ul id = "%1$s" class = "%2$s">%3$s</ul>',
-						'depth'           => 0,
-						'walker'          => '',
-					) );*/
 					wp_nav_menu( array(
-						'theme_location'  => 'primary',
+						'theme_location'  => 'top',
 						'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
 						'container'       => '',
 						'container_class' => '',
 						'container_id'    => '',
 						'menu_class'      => 'nav justify-content-around',
+						'menu_id'         => 'top_menu',
 						'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
 						'walker'          => new WP_Bootstrap_Navwalker(),
 					) );

@@ -28,21 +28,32 @@
 			<div class="col-md-12">
 				<div class="f_bottom_menu_block">
 					<div class="f_bottom_menu_cont">
-						<ul>
-							<li>
-								ИНН 112233444555 <br>
-								ОГРН 222333444555777888999
-							</li>
-							<li>
-								<a href="javascript:void(0)">Остекление</a>
-								<a href="javascript:void(0)">Остекление квартир</a>
-								<a href="javascript:void(0)">Остекление коттеджей</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)">Деревянные окна</a>
-								<a href="javascript:void(0)">Пластиковые окна</a>
-							</li>
-						</ul>
+						<span class="requsitess">
+							ИНН 112233444555 <br>
+							ОГРН 222333444555777888999
+						</span>
+						<?
+						wp_nav_menu( array(
+							'theme_location'  => 'footer',
+							'depth'           => 1, // 1 = no dropdowns, 2 = with dropdowns.
+							'container'       => 'ul',
+							'container_class' => '',
+							'container_id'    => '',
+							'menu_class'      => '',
+							'menu_id'         => 'bottom_menu',
+							'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+							'walker'          => new WP_Bootstrap_Navwalker(),
+						) );
+						?>
+<!--							<li>-->
+<!--								<a href="javascript:void(0)">Остекление</a>-->
+<!--								<a href="javascript:void(0)">Остекление квартир</a>-->
+<!--								<a href="javascript:void(0)">Остекление коттеджей</a>-->
+<!--							</li>-->
+<!--							<li>-->
+<!--								<a href="javascript:void(0)">Деревянные окна</a>-->
+<!--								<a href="javascript:void(0)">Пластиковые окна</a>-->
+<!--							</li>-->
 					</div>
 					<div class="f_bottom_contact_block">
 						<ul>
@@ -91,56 +102,69 @@
 		<div class="burger"></div>
 	</div>
 	<div class="mobile-menu">
-		<ul class="nav justify-content-around">
-			<li class="nav-item">
-				<div class="dropdown open">
-					<a href="javascript:void(0)" class="btn dropdown-toggle" type="button" id="dropdownMenuButton_main" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Главная
-					</a>
-					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton_main">
-						<a class="dropdown-item" href="#">О компании</a>
-						<a class="dropdown-item" href="#">Миссия и ценности</a>
-						<a class="dropdown-item" href="#">Реализованные проекты</a>
-						<a class="dropdown-item" href="#">Карьера</a>
-						<a class="dropdown-item" href="#">Контакты</a>
-					</div>
-				</div>
-			</li>
-			<li class="nav-item"><a href="#" class="nav-link">Партнеры</a></li>
-			<li class="nav-item">
-				<div class="dropdown open">
-					<a href="javascript:void(0)" class="btn dropdown-toggle" type="button" id="dropdownMenuButton_osteklenie" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Отстекление
-					</a>
-					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton_osteklenie">
-						<a class="dropdown-item" href="#">Толщина стекла</a>
-						<a class="dropdown-item" href="#">Разновидности стекла</a>
-					</div>
-				</div>
-			</li>
-			<li class="nav-item">
-				<div class="dropdown open">
-					<a href="javascript:void(0)" class="btn dropdown-toggle" type="button" id="dropdownMenuButton_pvh" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						ПВХ
-					</a>
-					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton_pvh">
-						<a class="dropdown-item" href="#">Виды профиля</a>
-						<a class="dropdown-item" href="#">Ламинированный профиль</a>
-					</div>
-				</div>
-			</li>
-			<li class="nav-item">
-				<div class="dropdown open">
-					<a href="javascript:void(0)" class="btn dropdown-toggle" type="button" id="dropdownMenuButton_window" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Алюминевые окна
-					</a>
-					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton_window">
-						<a class="dropdown-item" href="#">Виды</a>
-					</div>
-				</div>
-			</li>
-			<li class="nav-item"><a href="" class="nav-link">Новости</a></li>
-		</ul>
+		<?
+		wp_nav_menu( array(
+			'theme_location'  => 'top',
+			'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
+			'container'       => '',
+			'container_class' => '',
+			'container_id'    => '',
+			'menu_class'      => 'nav justify-content-around',
+			'menu_id'         => 'top_menu',
+			'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+			'walker'          => new WP_Bootstrap_Navwalker(),
+		) );
+		?>
+<!--		<ul class="nav justify-content-around">-->
+<!--			<li class="nav-item">-->
+<!--				<div class="dropdown open">-->
+<!--					<a href="javascript:void(0)" class="btn dropdown-toggle" type="button" id="dropdownMenuButton_main" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--						Главная-->
+<!--					</a>-->
+<!--					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton_main">-->
+<!--						<a class="dropdown-item" href="#">О компании</a>-->
+<!--						<a class="dropdown-item" href="#">Миссия и ценности</a>-->
+<!--						<a class="dropdown-item" href="#">Реализованные проекты</a>-->
+<!--						<a class="dropdown-item" href="#">Карьера</a>-->
+<!--						<a class="dropdown-item" href="#">Контакты</a>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</li>-->
+<!--			<li class="nav-item"><a href="#" class="nav-link">Партнеры</a></li>-->
+<!--			<li class="nav-item">-->
+<!--				<div class="dropdown open">-->
+<!--					<a href="javascript:void(0)" class="btn dropdown-toggle" type="button" id="dropdownMenuButton_osteklenie" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--						Отстекление-->
+<!--					</a>-->
+<!--					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton_osteklenie">-->
+<!--						<a class="dropdown-item" href="#">Толщина стекла</a>-->
+<!--						<a class="dropdown-item" href="#">Разновидности стекла</a>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</li>-->
+<!--			<li class="nav-item">-->
+<!--				<div class="dropdown open">-->
+<!--					<a href="javascript:void(0)" class="btn dropdown-toggle" type="button" id="dropdownMenuButton_pvh" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--						ПВХ-->
+<!--					</a>-->
+<!--					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton_pvh">-->
+<!--						<a class="dropdown-item" href="#">Виды профиля</a>-->
+<!--						<a class="dropdown-item" href="#">Ламинированный профиль</a>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</li>-->
+<!--			<li class="nav-item">-->
+<!--				<div class="dropdown open">-->
+<!--					<a href="javascript:void(0)" class="btn dropdown-toggle" type="button" id="dropdownMenuButton_window" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--						Алюминевые окна-->
+<!--					</a>-->
+<!--					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton_window">-->
+<!--						<a class="dropdown-item" href="#">Виды</a>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</li>-->
+<!--			<li class="nav-item"><a href="" class="nav-link">Новости</a></li>-->
+<!--		</ul>-->
 	</div>
 </div>
 
