@@ -4,47 +4,47 @@ document.addEventListener("DOMContentLoaded", function() {
 		$('[name="mfbPhone"]').mask("+7-(999)-999-99-99");
 	});
 
-	//инициализируем галерею ДО запуска слайдера
-	var gallery = $('.slide');
-	//при клике на ссылку в слайде запускаем галерею
-	$('.slide').on('click', function(e) {
-		e.preventDefault();
-		//узнаём индекс слайда без учёта клонов
-		var totalSlides = +$(this).parents('.slider').slick("getSlick").slideCount,
-			dataIndex = +$(this).parents('.slide').data('slick-index'),
-			trueIndex;
-		switch(true){
-			case (dataIndex<0):
-				trueIndex = totalSlides+dataIndex; break;
-			case (dataIndex>=totalSlides):
-				trueIndex = dataIndex%totalSlides; break;
-			default:
-				trueIndex = dataIndex;
-		}
-		//вызывается элемент галереи, соответствующий индексу слайда
-		$.fancybox.open(gallery,{}, trueIndex);
-		return false;
-	});
-	
-	$('#gallery_slider').slick({
-		slidesToShow: 3,
-		responsive: [
-			{
-			breakpoint: 1000,
-	    		settings: {
-					slidesToShow: 2,
-	    		}
-	    	},
-	    	{
-			breakpoint: 700,
-	    		settings: {
-					slidesToShow: 1,
-	    		}
-	    	}
-		],   
-		prevArrow: '<button style="transform: rotate(180deg)" type="button" class="slick-prev"><img src="https://zbm-windows.kz/wp-content/themes/window/images/dest/arrow-left.svg"></button>',
-  		nextArrow: '<button type="button" class="slick-next"><img src="https://zbm-windows.kz/wp-content/themes/window/images/dest/arrow-left.svg"></button>'
-	});
+	// //инициализируем галерею ДО запуска слайдера
+	// var gallery = $('.slide');
+	// //при клике на ссылку в слайде запускаем галерею
+	// $('.slide').on('click', function(e) {
+	// 	e.preventDefault();
+	// 	//узнаём индекс слайда без учёта клонов
+	// 	var totalSlides = +$(this).parents('.slider').slick("getSlick").slideCount,
+	// 		dataIndex = +$(this).parents('.slide').data('slick-index'),
+	// 		trueIndex;
+	// 	switch(true){
+	// 		case (dataIndex<0):
+	// 			trueIndex = totalSlides+dataIndex; break;
+	// 		case (dataIndex>=totalSlides):
+	// 			trueIndex = dataIndex%totalSlides; break;
+	// 		default:
+	// 			trueIndex = dataIndex;
+	// 	}
+	// 	//вызывается элемент галереи, соответствующий индексу слайда
+	// 	$.fancybox.open(gallery,{}, trueIndex);
+	// 	return false;
+	// });
+	//
+	// $('#gallery_slider').slick({
+	// 	slidesToShow: 3,
+	// 	responsive: [
+	// 		{
+	// 		breakpoint: 1000,
+	//     		settings: {
+	// 				slidesToShow: 2,
+	//     		}
+	//     	},
+	//     	{
+	// 		breakpoint: 700,
+	//     		settings: {
+	// 				slidesToShow: 1,
+	//     		}
+	//     	}
+	// 	],
+	// 	prevArrow: '<button style="transform: rotate(180deg)" type="button" class="slick-prev"><img src="https://zbm-windows.kz/wp-content/themes/window/images/dest/arrow-left.svg"></button>',
+  	// 	nextArrow: '<button type="button" class="slick-next"><img src="https://zbm-windows.kz/wp-content/themes/window/images/dest/arrow-left.svg"></button>'
+	// });
 
 	//SCROLL
 	$(window).scroll(function() {
@@ -126,5 +126,33 @@ document.addEventListener("DOMContentLoaded", function() {
 			alert('Выберите тип окна')
 
 	})
+
+	// Форма заявки
+	$("form").submit(function () {
+		var str = $(this).serialize();
+		$.ajax({
+			type: "POST",
+			url: "https://zbm-windows.kz/wp-content/themes/window/ajax/contact.php",
+			data: str,
+			success: function (data) {
+				if (data == 'ok') {
+					$('#kek').trigger('click');
+					setTimeout(function () {
+						$.fancybox.close();
+						$.fancybox.close();
+						$('.form_done').html('Ваша заявка принята, ожидайте звонка');
+					}, 3000);
+				} else {
+					$('#lol').trigger('click');
+					setTimeout(function () {
+						if($('#error').hasClass('fancybox-content')) {
+							/*$.fancybox.close();*/
+						}
+					}, 3000);
+				}
+			}
+		});
+		return false;
+	});
 
 });

@@ -96,20 +96,21 @@
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<div class="section_title">Портфолио</div>
-					<div id="gallery_slider">
-						<a href="<?bloginfo('template_directory')?>/images/dest/gallery_1.jpg" data-fancybox="gallery" class="slide">
-							<img src="<?bloginfo('template_directory')?>/images/dest/gallery_1.jpg" alt="">
-						</a>
-						<a href="<?bloginfo('template_directory')?>/images/dest/gallery_2.jpg" data-fancybox="gallery" class="slide">
-							<img src="<?bloginfo('template_directory')?>/images/dest/gallery_2.jpg" alt="">
-						</a>
-						<a href="<?bloginfo('template_directory')?>/images/dest/gallery_3.jpg" data-fancybox="gallery" class="slide">
-							<img src="<?bloginfo('template_directory')?>/images/dest/gallery_3.jpg" alt="">
-						</a>
-						<a href="<?bloginfo('template_directory')?>/images/dest/gallery_3.jpg" data-fancybox="gallery" class="slide">
-							<img src="<?bloginfo('template_directory')?>/images/dest/gallery_3.jpg" alt="">
-						</a>
-					</div>
+<!--					<div id="gallery_slider">-->
+<!--						<a href="--><?//bloginfo('template_directory')?><!--/images/dest/gallery_1.jpg" data-fancybox="gallery" class="slide">-->
+<!--							<img src="--><?//bloginfo('template_directory')?><!--/images/dest/gallery_1.jpg" alt="">-->
+<!--						</a>-->
+<!--						<a href="--><?//bloginfo('template_directory')?><!--/images/dest/gallery_2.jpg" data-fancybox="gallery" class="slide">-->
+<!--							<img src="--><?//bloginfo('template_directory')?><!--/images/dest/gallery_2.jpg" alt="">-->
+<!--						</a>-->
+<!--						<a href="--><?//bloginfo('template_directory')?><!--/images/dest/gallery_3.jpg" data-fancybox="gallery" class="slide">-->
+<!--							<img src="--><?//bloginfo('template_directory')?><!--/images/dest/gallery_3.jpg" alt="">-->
+<!--						</a>-->
+<!--						<a href="--><?//bloginfo('template_directory')?><!--/images/dest/gallery_3.jpg" data-fancybox="gallery" class="slide">-->
+<!--							<img src="--><?//bloginfo('template_directory')?><!--/images/dest/gallery_3.jpg" alt="">-->
+<!--						</a>-->
+<!--					</div>-->
+					<?=do_shortcode('[smartslider3 slider="2"]')?>
 				</div>
 			</div>
 		</div>
@@ -121,7 +122,10 @@
 				<div class="col-md-12 text-center">
 					<div class="section_title">О нас</div>
 					<div class="movie">
-						<img src="<?bloginfo('template_directory')?>/images/dest/video.png" alt="">
+						<figure class="wp-block-video">
+							<video controls poster="https://zbm-windows.kz/wp-content/uploads/2021/05/video.png"
+								   src="<?the_field('about_us_video')?>"></video>
+						</figure>
 					</div>
 				</div>
 			</div>
