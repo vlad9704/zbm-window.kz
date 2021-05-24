@@ -4,15 +4,12 @@
 			<div class="contact_block">
 				<div class="title">Контакты</div>
 				<div class="contact_items">
-					<div class="contact_item">Ул. Н. Островского, <br> д. 115 к. 1</div>
+					<div class="contact_item"><?the_field('header_address', 2)?></div>
+					<div class="contact_item"><?the_field('work_time', 2)?></div>
+					<div class="contact_item"><a href="mailto: <?the_field('mail_address', 2)?>"><?the_field('mail_address', 2)?></a></div>
 					<div class="contact_item">
-						Пн-пт: 11:00 до 23:00 <br>
-						Сб: с 9:00 до 13:00
-					</div>
-					<div class="contact_item"><a href="mailto: oknoknaaaaaaaaa@mail.ru">oknaaaaaaaa@mail.ru</a></div>
-					<div class="contact_item">
-						<a class="phone_one" href="tel:+77077777077">+7(707) 777 70 77</a>
-						<a class="phone_two" href="tel:+77077777077">+7(707) 777 70 77</a>
+						<a class="phone_one" href="tel:<?the_field('header_phone_one', 2)?>"><?the_field('header_phone_one', 2)?></a>
+						<a class="phone_two" href="tel:<?the_field('header_phone_two', 2)?>"><?the_field('header_phone_two', 2)?></a>
 					</div>
 				</div>
 			</div>
@@ -29,8 +26,8 @@
 				<div class="f_bottom_menu_block">
 					<div class="f_bottom_menu_cont">
 						<span class="requsitess">
-							ИНН 112233444555 <br>
-							ОГРН 222333444555777888999
+							<?the_field('footer_iin', 2)?> <br>
+							<?the_field('footer_ogrn', 2)?>
 						</span>
 						<?
 						wp_nav_menu( array(
@@ -45,30 +42,21 @@
 							'walker'          => new WP_Bootstrap_Navwalker(),
 						) );
 						?>
-<!--							<li>-->
-<!--								<a href="javascript:void(0)">Остекление</a>-->
-<!--								<a href="javascript:void(0)">Остекление квартир</a>-->
-<!--								<a href="javascript:void(0)">Остекление коттеджей</a>-->
-<!--							</li>-->
-<!--							<li>-->
-<!--								<a href="javascript:void(0)">Деревянные окна</a>-->
-<!--								<a href="javascript:void(0)">Пластиковые окна</a>-->
-<!--							</li>-->
 					</div>
 					<div class="f_bottom_contact_block">
 						<ul>
 							<li>Политика конфиденциальности</li>
-							<li><a class="mail" href="mailto: oknoknaaaaaaaaa@mail.ru">oknaaaaaaaa@mail.ru</a></li>
+							<li><a class="mail" href="mailto: <?the_field('mail_address', 2)?>"><?the_field('mail_address', 2)?></a></li>
 							<li>
 								<div class="numbers">
-									<a class="phone_one" href="tel:+77077777077">+7(707) 777 70 77</a>
-									<a class="phone_two" href="tel:+77077777077">+7(707) 777 70 77</a>
+									<a class="phone_one" href="tel:<?the_field('header_phone_one', 2)?>"><?the_field('header_phone_one', 2)?></a>
+									<a class="phone_two" href="tel:<?the_field('header_phone_two', 2)?>"><?the_field('header_phone_two', 2)?></a>
 								</div>
 							</li>
 							<li>
 								<div class="f_bottom_social">
-									<a href="facebook.com"><img src="<?bloginfo('template_directory')?>/images/dest/facebook_footer.svg" alt="facebook" title="facebook"></a>
-									<a href="instagram.com"><img src="<?bloginfo('template_directory')?>/images/dest/instagram_footer.svg" alt="instagram" title="instagram"></a>
+									<a target="_blank" href="<?the_field('facebook_link', 2)?>"><img src="<?bloginfo('template_directory')?>/images/dest/facebook_footer.svg" alt="facebook" title="facebook"></a>
+									<a target="_blank" href="https://www.instagram.com/<?the_field('instagram_link', 2)?>"><img src="<?bloginfo('template_directory')?>/images/dest/instagram_footer.svg" alt="instagram" title="instagram"></a>
 								</div>
 							</li>
 						</ul>
@@ -115,56 +103,6 @@
 			'walker'          => new WP_Bootstrap_Navwalker(),
 		) );
 		?>
-<!--		<ul class="nav justify-content-around">-->
-<!--			<li class="nav-item">-->
-<!--				<div class="dropdown open">-->
-<!--					<a href="javascript:void(0)" class="btn dropdown-toggle" type="button" id="dropdownMenuButton_main" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--						Главная-->
-<!--					</a>-->
-<!--					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton_main">-->
-<!--						<a class="dropdown-item" href="#">О компании</a>-->
-<!--						<a class="dropdown-item" href="#">Миссия и ценности</a>-->
-<!--						<a class="dropdown-item" href="#">Реализованные проекты</a>-->
-<!--						<a class="dropdown-item" href="#">Карьера</a>-->
-<!--						<a class="dropdown-item" href="#">Контакты</a>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--			</li>-->
-<!--			<li class="nav-item"><a href="#" class="nav-link">Партнеры</a></li>-->
-<!--			<li class="nav-item">-->
-<!--				<div class="dropdown open">-->
-<!--					<a href="javascript:void(0)" class="btn dropdown-toggle" type="button" id="dropdownMenuButton_osteklenie" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--						Отстекление-->
-<!--					</a>-->
-<!--					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton_osteklenie">-->
-<!--						<a class="dropdown-item" href="#">Толщина стекла</a>-->
-<!--						<a class="dropdown-item" href="#">Разновидности стекла</a>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--			</li>-->
-<!--			<li class="nav-item">-->
-<!--				<div class="dropdown open">-->
-<!--					<a href="javascript:void(0)" class="btn dropdown-toggle" type="button" id="dropdownMenuButton_pvh" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--						ПВХ-->
-<!--					</a>-->
-<!--					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton_pvh">-->
-<!--						<a class="dropdown-item" href="#">Виды профиля</a>-->
-<!--						<a class="dropdown-item" href="#">Ламинированный профиль</a>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--			</li>-->
-<!--			<li class="nav-item">-->
-<!--				<div class="dropdown open">-->
-<!--					<a href="javascript:void(0)" class="btn dropdown-toggle" type="button" id="dropdownMenuButton_window" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--						Алюминевые окна-->
-<!--					</a>-->
-<!--					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton_window">-->
-<!--						<a class="dropdown-item" href="#">Виды</a>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--			</li>-->
-<!--			<li class="nav-item"><a href="" class="nav-link">Новости</a></li>-->
-<!--		</ul>-->
 	</div>
 </div>
 

@@ -46,37 +46,37 @@
 							<input placeholder="высота/м²" class="height_size j_height_size" type="number">
 						</div>
 						<div class="calculation_item">
-							<div class="j_type_window i_type_window" data-price="25000">
+							<div class="j_type_window i_type_window" data-price="<?the_field('calc_price_one')?>">
 								<input type="radio">
 								<span>Одностворчатое</span>
 							</div>
 						</div>
 						<div class="calculation_item">
-							<div class="j_type_window i_type_window" data-price="28000">
+							<div class="j_type_window i_type_window" data-price="<?the_field('calc_price_two')?>">
 								<input type="radio">
 								<span>Двухстворчатое ( три секции )</span>
 							</div>
 						</div>
 						<div class="calculation_item">
-							<div class="j_type_window i_type_window" data-price="0">
+							<div class="j_type_window i_type_window" data-price="<?the_field('calc_price_three')?>">
 								<input type="radio">
 								<span>Простое открывание</span>
 							</div>
 						</div>
 						<div class="calculation_item">
-							<div class="j_type_window i_type_window" data-price="7000">
+							<div class="j_type_window i_type_window" data-price="<?the_field('calc_price_four')?>">
 								<input type="radio">
 								<span>Сложное открывание</span>
 							</div>
 						</div>
 						<div class="calculation_item">
-							<div class="j_type_window i_type_window" data-price="35000">
+							<div class="j_type_window i_type_window" data-price="<?the_field('calc_price_five')?>">
 								<input type="radio">
 								<span>Ламинированный профиль</span>
 							</div>
 						</div>
 						<div class="calculation_item">
-							<div class="j_type_window i_type_window" data-price="70000">
+							<div class="j_type_window i_type_window" data-price="<?the_field('calc_price_six')?>">
 								<input type="radio">
 								<span>Алюминиевый профиль</span>
 							</div>
