@@ -21,26 +21,20 @@
 			<div class="row align-items-center justify-content-between">
 				<div class="col-xl-3 col-lg-3 col-sm-6 col-5">
 					<div class="logo">
-						<a href="/"><img src="<?bloginfo('template_directory')?>/images/dest/logo.png" alt=""></a>
-<!--						<a href="#" class="header__interface--logo">-->
-<!--							--><?php
-//							$logo_img = '';
-//							if(is_front_page()){
-//								if( $custom_logo_id = get_theme_mod('custom_logo') ){
-//									$logo_img = wp_get_attachment_image( $custom_logo_id, 'full', false, array(
-//										'class'    => 'custom-logo',
-//										'itemprop' => 'logo',
-//									) );
-//									echo '<div class="logo">' . $logo_img .
-//									     '<span class="logo-name">' . get_bloginfo('name') . '</span></div>';
-//								}else {
-//									echo '<span class="logo-name">' . get_bloginfo('name') . '</span>';
-//								}} else {
-//								echo '<div class="logo">' . get_custom_logo() .
-//								     '<a class="logo-name" href="' . get_bloginfo('url') . '">' . get_bloginfo('name') . '</a></div>';
-//							}
-//							?>
-<!--						</a>-->
+<!--						<a href="/"><img src="--><?//bloginfo('template_directory')?><!--/images/dest/logo.png" alt=""></a>-->
+						<a href="/">
+							<?php
+							$logo_img = '';
+							if ($custom_logo_id = get_theme_mod('custom_logo')) {
+								$logo_img = wp_get_attachment_image($custom_logo_id, 'full', false, array(
+									'itemprop' => 'logo',
+								));
+								echo $logo_img;
+							} else {
+								echo '<span class="logo-name">' . get_bloginfo('name') . '</span>';
+							}
+							?>
+						</a>
 					</div>
 				</div>
 				<div class="col-lg-3 col-sm-6 col-7">

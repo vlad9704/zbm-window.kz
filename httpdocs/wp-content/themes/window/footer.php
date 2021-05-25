@@ -106,9 +106,9 @@
 	</div>
 </div>
 
-
 <div class="scroll"><img src="<?bloginfo('template_directory')?>/images/dest/scroll.png" alt="scroll"></div>
 
+<? wp_footer(); ?>
 
 <script src="<?bloginfo('template_directory')?>/js/plugins/jquery.js"></script>
 

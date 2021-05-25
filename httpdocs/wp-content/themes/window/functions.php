@@ -194,3 +194,11 @@ add_action( 'after_setup_theme', 'register_navwalker' );
 function register_navwalker(){
 	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 }
+
+// Добавление пользовательского лого динамически
+add_theme_support( 'custom-logo', [
+	//'width'       => 350,
+	'flex-height' => true,
+	'header-text' => 'WorldMonitor',
+	'unlink-homepage-logo' => false, // WP 5.5
+] );
