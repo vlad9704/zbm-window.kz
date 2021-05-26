@@ -448,7 +448,6 @@ header .logo img {
 header .header_location {
 	padding-left: 25px;
 	background: url(../images/dest/address.svg) no-repeat 0 10px/15px auto;
-	max-width: 180px
 }
 
 header .btn.focus, header .btn:focus {

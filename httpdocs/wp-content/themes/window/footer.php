@@ -16,7 +16,7 @@
 		</div>
 		<div class="col-lg-7 col-md-6">
 			<div class="map">
-				<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aecc67350bc1eb3ed48d6a559b6dd9932552f09859b52bee462e337288e00c41c&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=true"></script>
+				<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A5cc928e977e97aca4290cc7f6d8c8a35a937ccbeea41ec6af9994c7513600c14&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=true"></script>
 			</div>
 		</div>
 	</div>
